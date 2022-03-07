@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kawotek Academy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images/fav.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link href="css/stellarnav.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <a href="javascript:void(0)" id="scrollup"
+      ><i class="fa fa-angle-up" aria-hidden="true"></i
+    ></a>
+
+    <!-- jQuery Area -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/stellarnav.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script type="text/javascript">
+      $("#home_modal_video1").on("shown.bs.modal", function () {
+        $("#h_video1")[0].play();
+      });
+      $("#home_modal_video1").on("hidden.bs.modal", function () {
+        $("#h_video1")[0].pause();
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        // Add minus icon for collapse element which is open by default
+        $(".filter_accordion .collapse.show").each(function () {
+          $(this)
+            .prev(".card-header")
+            .find(".fa")
+            .addClass("fa-angle-up")
+            .removeClass("fa-angle-down");
+        });
+
+        // Toggle plus minus icon on show hide of collapse element
+        $(".filter_accordion .collapse")
+          .on("show.bs.collapse", function () {
+            $(this)
+              .prev(".card-header")
+              .find(".fa")
+              .removeClass("fa-angle-down")
+              .addClass("fa-angle-up");
+          })
+          .on("hide.bs.collapse", function () {
+            $(this)
+              .prev(".card-header")
+              .find(".fa")
+              .removeClass("fa-angle-up")
+              .addClass("fa-angle-down");
+          });
+      });
+    </script>
+
+    <!-- <script type="text/javascript">
+      // Read more
+      $(".morelink").click(function () {
+        $(".moretext").slideToggle();
+        if ($(".morelink").text() == "Read more...") {
+          $(this).text("Read less...");
+        } else {
+          $(this).text("Read more...");
+        }
+      });
+
+      $(".edit-profile").click(function () {
+        //$('.moretext').slideToggle();
+        if ($(".edit-profile").text() == "Edit Profile") {
+          $(this).text("Cancel");
+          //$(this).addClass("edtext")
+        } else {
+          $(this).text("Edit Profile");
+          //$(this).removeClass("edtext")
+        }
+        $(
+          ".edit-profile-form > .form-group:not(.notification-switch)"
+        ).toggleClass("introform");
+      });
+    </script> -->
+  </body>
+</html>
