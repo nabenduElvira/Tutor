@@ -144,6 +144,7 @@ const SchedulerScreen = () => {
     return () => clearInterval(interval);
   }, []);
 
+  
   const getSchedule = async () => {
     const response = await axios.get(
       `https://kawotekbackend.elvirainfotech.org/schedule/teacher/${JSON.parse(localStorage.getItem("userInfo")).id}`
